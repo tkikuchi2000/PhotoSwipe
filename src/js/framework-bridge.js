@@ -12,7 +12,7 @@ var framework = {
 		type = type.split(' ');
 		for(var i = 0; i < type.length; i++) {
 			if(type[i]) {
-				target[methodName]( type[i], listener, false);
+				target[methodName]( type[i], listener, ['mousewheel', 'wheel', 'touchstart', 'touchmove'].indexOf(type[i]) === -1 ? false : {passive: true});
 			}
 		}
 	},
